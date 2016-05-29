@@ -47,8 +47,10 @@
   <ItemGroup>
      <Compile Include="Assets\RendererExtensions.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
+     <Compile Include="Assets\Scripts\GameOver.cs" />
      <Compile Include="Assets\Scripts\HealthScript.cs" />
      <Compile Include="Assets\Scripts\JacksMoveScript.cs" />
+     <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\MoveScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\ScrollingScript.cs" />
