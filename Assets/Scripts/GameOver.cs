@@ -10,9 +10,19 @@ public class GameOverScript : MonoBehaviour
 		//const int buttonWidth = 120;
 		//const int buttonHeight = 60;
 
-		int buttonWidth = Screen.width / 12;
-		int buttonHeight = Screen.height / 10;
+		int buttonWidth = new int();
+		int buttonHeight = new int();
 
+		if (((Screen.width / 12) > 120) && ((Screen.height / 10) > 60))
+		{
+			buttonWidth = Screen.width / 12;
+			buttonHeight = Screen.height / 10;
+		}
+		else
+		{
+			buttonWidth = 120;
+			buttonHeight = 60;
+		}
 		if (
 			GUI.Button(
 				// Center in X, 1/3 of the height in Y
