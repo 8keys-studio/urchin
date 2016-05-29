@@ -6,11 +6,11 @@ public class EnemyScript : MonoBehaviour {
 	/// Enemy generic behavior
 	/// </summary>
 
-	private WeaponScript weapon;
+	private WeaponScript[] weapons;
 
 	void Awake () {
 		//retrieve the weapon only once
-		weapon = GetComponent<WeaponScript>();
+		weapons = GetComponentsInChildren<WeaponScript>();
 
 	}
 
@@ -22,11 +22,13 @@ public class EnemyScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		//auto-fire
-		if (weapon != null && weapon.CanAttack)
+		foreach (WeaponScript weapon in weapons)
 		{
-			weapon.Attack(true);
+			//auto-fire
+			if (weapon != null && weapon.CanAttack)
+			{
+				weapon.Attack(true);
+			}
 		}
-
 	}
 }
