@@ -105,10 +105,8 @@ public class PlayerScript : MonoBehaviour {
 
 	void OnDestroy()
 	{
-		// Game Over.
-		// Add the script to the parent because the current game
-		// object is likely going to be destroyed immediately.
-		transform.parent.gameObject.AddComponent<GameOverScript>();
+		//Fire the Game Over screen on death
+		Application.LoadLevel("GameOver");
 	}
 
 }
