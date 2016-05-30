@@ -21,9 +21,11 @@ public class CormorantMoveScript : MonoBehaviour {
 
 		// movement
 
-		if (gameObject.transform.position.y <= 0)
+		if ((gameObject.transform.position.y <= 0) && (gameObject.transform.rotation.z != 270))
 		{
 			//to do: make this more elegant
+			//to do: this intermittently causes the enemy to set z-rotation to 180?? Find out if there's a better way to handle this, or 
+			//just fix it with animations.
 			gameObject.transform.Rotate(0, 0, 270);
 
 			direction.y = 1;

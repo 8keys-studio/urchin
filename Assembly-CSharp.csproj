@@ -54,6 +54,9 @@
      <Compile Include="Assets\Scripts\JacksMoveScript.cs" />
      <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\MoveScript.cs" />
+     <Compile Include="Assets\Scripts\OtterEnemyScript.cs" />
+     <Compile Include="Assets\Scripts\OtterMoveScript.cs" />
+     <Compile Include="Assets\Scripts\PauseScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\ScrollingScript.cs" />
      <Compile Include="Assets\Scripts\ShotScript.cs" />
