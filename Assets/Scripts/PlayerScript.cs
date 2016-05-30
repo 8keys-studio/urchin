@@ -79,8 +79,10 @@ public class PlayerScript : MonoBehaviour {
 	{
 		bool damagePlayer = false;
 
-		//Collision with enemy
+		//Collision with enemy types - there's probably a cleaner way to do this
 		EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
+		OtterEnemyScript otterEnemy = collision.gameObject.GetComponent<OtterEnemyScript>();
+		CormorantEnemyScript cormorantEnemy = collision.gameObject.GetComponent<CormorantEnemyScript>();
 
 		if (enemy != null)
 		{
@@ -91,6 +93,28 @@ public class PlayerScript : MonoBehaviour {
 			damagePlayer = true;
 
 		}
+
+		if (otterEnemy != null)
+		{
+
+			HealthScript enemyHealth = otterEnemy.GetComponent<HealthScript>();
+			if (enemyHealth != null) enemyHealth.Damage(enemyHealth.hp);
+
+			damagePlayer = true;
+
+		}
+
+		if (cormorantEnemy != null)
+		{
+
+			HealthScript enemyHealth = cormorantEnemy.GetComponent<HealthScript>();
+			if (enemyHealth != null) enemyHealth.Damage(enemyHealth.hp);
+
+			damagePlayer = true;
+
+		}
+
+
 
 		// Damage the player
 
@@ -106,6 +130,7 @@ public class PlayerScript : MonoBehaviour {
 	void OnDestroy()
 	{
 		//Fire the Game Over screen on death
+		//TO DO: call another script and wait a few frames before game over to give time for explosion to fire
 		Application.LoadLevel("GameOver");
 	}
 
