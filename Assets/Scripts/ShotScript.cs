@@ -22,6 +22,11 @@ public class ShotScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (GetComponent<Renderer>().IsVisibleFrom(Camera.main) == false)
+		{
+			Destroy(gameObject);
+		}
 	
 	}
 }
