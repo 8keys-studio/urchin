@@ -15,18 +15,16 @@ public class RockMoveScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		movement = new Vector2(
-			speed.x * direction.x,
-			speed.y * direction.y);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (GetComponent<Renderer>().IsVisibleFrom(Camera.main) == false)
-		{
-			Destroy(gameObject);
-		}
+		movement = new Vector2(
+			speed.x * direction.x,
+			speed.y * direction.y);
+
 	
 	}
 
