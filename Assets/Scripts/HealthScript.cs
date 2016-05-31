@@ -31,7 +31,7 @@ public class HealthScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D otherCollider)
 	{
-		//is this a shot?
+		//is this a standard shot?
 		ShotScript shot = otherCollider.gameObject.GetComponent<ShotScript>();
 		if (shot != null)
 		{
@@ -42,6 +42,20 @@ public class HealthScript : MonoBehaviour {
 
 				//Destroy the shot
 				Destroy(shot.gameObject); //target game object so we don't remove the script - again ... lol
+			}
+		}
+
+		//is this a rock shot?
+		RockShotScript rockShot = otherCollider.gameObject.GetComponent<RockShotScript>();
+		if (rockShot != null)
+		{
+			//no friendly fire
+			if (rockShot.isEnemyShot != isEnemy)
+			{
+				Damage(rockShot.damage);
+
+				//Destroy the shot
+				Destroy(rockShot.gameObject); //target game object so we don't remove the script - again ... lol
 			}
 		}
 	}

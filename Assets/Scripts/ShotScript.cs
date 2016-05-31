@@ -23,6 +23,7 @@ public class ShotScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		//remove the bullet from memory if it can't be seen
 		if (GetComponent<Renderer>().IsVisibleFrom(Camera.main) == false)
 		{
 			Destroy(gameObject);

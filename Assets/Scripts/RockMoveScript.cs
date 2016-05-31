@@ -14,7 +14,12 @@ public class RockMoveScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
+		// set direction of the rock to aim at the player. We set this when the rock is generated because its direction is never altered.
+		Vector2 playerPosition = GameObject.Find("Player").transform.position;
+
+		//get the change in Y between the instance and destination, over speed and make it negative for proper results.
+		direction.y = (((gameObject.transform.position.y - playerPosition.y) / speed.y) * -1);
 
 	}
 	

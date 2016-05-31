@@ -27,7 +27,10 @@ public class EnemyScript : MonoBehaviour
 		// -- collider
 		GetComponent<Collider2D>().enabled = false;
 		// -- Moving
-		moveScript.enabled = false;
+		if (moveScript != null)
+		{
+			moveScript.enabled = false;
+		}
 		// -- Shooting
 		foreach (WeaponScript weapon in weapons)
 		{
@@ -73,7 +76,10 @@ public class EnemyScript : MonoBehaviour
 		// -- Collider
 		GetComponent<Collider2D>().enabled = true;
 		// -- Moving
-		moveScript.enabled = true;
+		if (moveScript != null)
+		{
+			moveScript.enabled = true;
+		}
 		// -- Shooting
 		foreach (WeaponScript weapon in weapons)
 		{
