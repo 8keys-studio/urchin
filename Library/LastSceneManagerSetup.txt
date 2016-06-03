@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/TestAnimations.unity
+- path: Assets/Scenes/Scrolling Test Stage.unity
   isLoaded: 1
   isActive: 1
